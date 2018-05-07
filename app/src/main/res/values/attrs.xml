@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomRateView">
+        <attr name="backgroundColor" format="color" />
+        <!--rate值-->
+
+        <attr name="valueColor" format="color" />
+        <attr name="rateValue" format="string" />
+        <attr name="valueSize" format="dimension" />
+        <!--rate值是否显示在中间位置-->
+        <attr name="valueInCenter" format="boolean" />
+
+        <!--单位-->
+        <attr name="unit" format="string" />
+        <attr name="unitSize" format="dimension" />
+        <attr name="unitColor" format="color" />
+        <attr name="unitMargin" format="dimension" />
+        <attr name="unitPosition" format="enum"><!--相对rate值-->
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="left" value="2" />
+            <enum name="right" value="3" />
+        </attr>
+        <attr name="unitCenterInValueRight" format="boolean" /><!--单位是否与rate中心水平 平行-->
+
+
+        <!--标题-->
+        <attr name="title" format="string" />
+        <attr name="titleSize" format="dimension" />
+        <attr name="titleColor" format="color" />
+        <attr name="titlePosition" format="enum"><!--相对于 rate值-->
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="left" value="2" />
+            <enum name="right" value="3" />
+        </attr>
+        <attr name="titleMargin" format="dimension" />
+
+        <!--进度条颜色和宽度-->
+        <attr name="progressBarColor" format="color" />
+        <attr name="progressBarWidth" format="dimension" />
+        <attr name="progressBarValue" format="integer" />
+        <attr name="progressBarBackgroundColor" format="color" /><!--可以为透明-->
+        <!--阴影效果-->
+        <attr name="shadowWidth" format="dimension" />
+        <attr name="shadowColor" format="color" />
+    </declare-styleable>
+
+    <attr name="CRV_def_style" format="reference" />
+</resources>

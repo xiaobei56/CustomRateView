@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="CRV_def_style">@style/CRV_theme_def_style</item>
+    </style>
+
+    <!--<item name="ZTV_def_style">@style/CRV_theme_def_style</item>-->
+
+    <style name="CRV_theme_def_style">
+        <item name="backgroundColor">#ffff</item>
+        <item name="valueColor">#fff</item>
+        <item name="valueSize">32dp</item>
+        <item name="valueInCenter">true</item>
+        <item name="unit">%</item>
+        <item name="unitSize">14dp</item>
+        <item name="unitColor">#fff</item>
+        <item name="unitMargin">5dp</item>
+        <item name="unitPosition">right</item>
+        <item name="unitCenterInValueRight">false</item>
+        <item name="titleSize">18dp</item>
+        <item name="titleColor">#fff</item>
+        <item name="titlePosition">bottom</item>
+        <item name="titleMargin">10dp</item>
+        <item name="progressBarColor">#fff</item>
+        <item name="progressBarWidth">3dp</item>
+        <item name="progressBarValue">36</item>
+        <item name="progressBarBackgroundColor">#fff</item>
+        <item name="shadowWidth">3dp</item>
+        <item name="shadowColor">#aaa</item>
+    </style>
+</resources>

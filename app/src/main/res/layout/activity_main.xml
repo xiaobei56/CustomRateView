@@ -5,19 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <com.bzb.customrateview.view.CustomRateView
-        android:id="@+id/crv"
-        style="@style/CRV_theme_def_style"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:rateValue="36" />
+    <!--<com.bzb.customrateview.view.CustomRateView-->
+        <!--android:id="@+id/crv"-->
+        <!--style="@style/CRV_theme_def_style"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp"-->
+        <!--rs:title="测试"-->
+        <!--rs:titleSize="18px"-->
+        <!--rs:valueSize="26px"-->
+        <!--rs:titleColor="@color/colorAccent"-->
+        <!--rs:unit="%"-->
+        <!--rs:unitColor="@color/colorPrimary"-->
+        <!--rs:unitSize="12px"-->
+        <!--rs:valueColor="@color/colorPrimary"-->
+        <!--rs:valueInCenter="true"-->
+        <!--android:elevation="5dp"-->
+        <!--rs:rateValue="36" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="action"
+        android:elevation="5dp">
+        <com.bzb.customrateview.view.CircleProgressView
+            android:id="@+id/circleProgressbar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true" />
 
-        android:text="add" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="action"-->
+
+        <!--android:text="add" />-->
 </LinearLayout>

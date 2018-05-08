@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.RectF;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
@@ -18,27 +16,18 @@ public class CircleProgressView extends View {
     private final int mTxtStrokeWidth = 2;
     // 画圆所在的距形区域
     private final RectF mRectF;
-    private final RectF mRectFBack1;
-    private final RectF mRectFBack2;
-    private final RectF mRectFBack3;
-    private final RectF mRectFBack4;
     private final Paint mPaint;
     private final Context mContext;
     public ViewClickListener viewClickListener;
     private int mMaxProgress = 100;
     private int mProgress = 30;
     private String mTxtHint1;
-    private String mTxtHint2;
 
     public CircleProgressView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         mContext = context;
         mRectF = new RectF();
-        mRectFBack1 = new RectF();
-        mRectFBack2 = new RectF();
-        mRectFBack3 = new RectF();
-        mRectFBack4 = new RectF();
         mPaint = new Paint();
     }
 
@@ -82,43 +71,40 @@ public class CircleProgressView extends View {
         String text = mProgress + "";
         int textUnitHeight = height / 8;
         int textUnitWidth = (int) mPaint.measureText(text, 0, text.length());
-        int textHeight = (int) (height / 2.1);
+        int textHeight = (int) (height / 2);
         mPaint.setTextSize(textHeight);
         int textWidth = (int) mPaint.measureText(text, 0, text.length());
         mPaint.setStyle(Paint.Style.FILL);
-        canvas.drawText(text, width / 2 - textWidth / 2-textUnitWidth-textUnitWidth/2, (int) (height / 2.1)+ textHeight / 4, mPaint);
+        canvas.drawText(text, width / 2 - textWidth / 2 - textUnitWidth - textUnitWidth / 2, (height / 2) + textHeight / 4, mPaint);
 
         // %
         mPaint.setStrokeWidth(mTxtStrokeWidth);
         String textUnit = "%";
         mPaint.setTextSize(textUnitHeight);
         mPaint.setStyle(Paint.Style.FILL);
-        canvas.drawText(textUnit, width / 2 +textWidth/2 -textUnitWidth/2+5, (int) (height / 2.1) + textHeight / 4, mPaint);
-
-
-
+        canvas.drawText(textUnit, width / 2 + textWidth / 2 - textUnitWidth + 5, (height / 2) + textHeight / 4, mPaint);
 
         if (!TextUtils.isEmpty(mTxtHint1)) {
             mPaint.setStrokeWidth(mTxtStrokeWidth);
             text = mTxtHint1;
-          int   textTitleHeight = height / 8;
+            int textTitleHeight = height / 10;
             mPaint.setTextSize(textTitleHeight);
             mPaint.setColor(Color.WHITE);
             textWidth = (int) mPaint.measureText(text, 0, text.length());
             mPaint.setStyle(Style.FILL);
-            canvas.drawText(text, width / 2 - textWidth / 2, (int) (height / 2.1) + textHeight-textTitleHeight-8 , mPaint);
+            canvas.drawText(text, width / 2 - textWidth / 2, (height / 2) + textHeight / 2 + textTitleHeight, mPaint);
         }
 
 
-        if (!TextUtils.isEmpty(mTxtHint2)) {
-            mPaint.setStrokeWidth(mTxtStrokeWidth);
-            text = mTxtHint2;
-            textHeight = height / 8;
-            mPaint.setTextSize(textHeight);
-            textWidth = (int) mPaint.measureText(text, 0, text.length());
-            mPaint.setStyle(Style.FILL);
-            canvas.drawText(text, width / 2 - textWidth / 2, 3 * height / 4 + textHeight / 2, mPaint);
-        }
+//        if (!TextUtils.isEmpty(mTxtHint2)) {
+//            mPaint.setStrokeWidth(mTxtStrokeWidth);
+//            text = mTxtHint2;
+//            textHeight = height / 8;
+//            mPaint.setTextSize(textHeight);
+//            textWidth = (int) mPaint.measureText(text, 0, text.length());
+//            mPaint.setStyle(Style.FILL);
+//            canvas.drawText(text, width / 2 - textWidth / 2, 3 * height / 4 + textHeight / 2, mPaint);
+//        }
 
     }
 
@@ -148,13 +134,13 @@ public class CircleProgressView extends View {
         this.mTxtHint1 = mTxtHint1;
     }
 
-    public String getmTxtHint2() {
-        return mTxtHint2;
-    }
-
-    public void setmTxtHint2(String mTxtHint2) {
-        this.mTxtHint2 = mTxtHint2;
-    }
+//    public String getmTxtHint2() {
+//        return mTxtHint2;
+//    }
+//
+//    public void setmTxtHint2(String mTxtHint2) {
+//        this.mTxtHint2 = mTxtHint2;
+//    }
 
     interface ViewClickListener {
         void viewClicked();

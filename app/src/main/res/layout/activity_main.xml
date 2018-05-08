@@ -1,41 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <!--<com.bzb.customrateview.view.CustomRateView-->
-        <!--android:id="@+id/crv"-->
-        <!--style="@style/CRV_theme_def_style"-->
-        <!--android:layout_width="200dp"-->
-        <!--android:layout_height="200dp"-->
-        <!--rs:title="测试"-->
-        <!--rs:titleSize="18px"-->
-        <!--rs:valueSize="26px"-->
-        <!--rs:titleColor="@color/colorAccent"-->
-        <!--rs:unit="%"-->
-        <!--rs:unitColor="@color/colorPrimary"-->
-        <!--rs:unitSize="12px"-->
-        <!--rs:valueColor="@color/colorPrimary"-->
-        <!--rs:valueInCenter="true"-->
-        <!--android:elevation="5dp"-->
-        <!--rs:rateValue="36" />-->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ttt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_task"/>
 
-        android:elevation="5dp">
-        <com.bzb.customrateview.view.CircleProgressView
-            android:id="@+id/circleProgressbar"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_centerInParent="true" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/trans1"
+        app:contentInsetStart="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="action"-->
+        <ImageButton
+            android:id="@+id/ibtn_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:background="@null"
+            android:src="@mipmap/ic_launcher_round"
+            tools:ignore="RtlHardcoded" />
 
-        <!--android:text="add" />-->
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="标题"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageButton
+            android:id="@+id/ibnt_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:background="@null"
+            android:src="@mipmap/ic_launcher_round"
+            tools:ignore="RtlHardcoded" />
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="辖区状态"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/circleProgressbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <com.bzb.customrateview.view.CircleProgressView
+        android:id="@+id/circleProgressbar"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toTopOf="@+id/tv_task"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <TextView
+        android:id="@+id/tv_total_km"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="巡河距离184.5KM"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/gif"
+        app:layout_constraintLeft_toLeftOf="@+id/gif"
+        app:layout_constraintRight_toRightOf="@+id/gif" />
+
+    <TextView
+        android:id="@+id/tv_total_times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="#fff"
+        android:text="2018/01/02"
+        app:layout_constraintLeft_toLeftOf="@+id/gif"
+        app:layout_constraintTop_toBottomOf="@+id/gif" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_marginTop="3dp"
+        android:text="巡河次数4次"
+        app:layout_constraintLeft_toLeftOf="@+id/gif"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gif" />
+
+    <TextView
+        android:id="@+id/tv_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="3dp"
+        android:text="现在"
+        android:textColor="#fff"
+        app:layout_constraintRight_toRightOf="@+id/gif"
+        app:layout_constraintTop_toBottomOf="@+id/gif" />
+
+    <ImageView
+        android:id="@+id/gif"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="8dp"
+
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_constraintBottom_toTopOf="@+id/tv_task"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circleProgressbar" />
+    <TextView
+        android:background="#6fff"
+        android:id="@+id/tv_task"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:textColor="#666666"
+        android:text="工作任务"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>
+
+
+    <!--<com.bzb.customrateview.view.CustomRateView--><!--android:id="@+id/crv"--><!--style="@style/CRV_theme_def_style"--><!--android:layout_width="200dp"--><!--android:layout_height="200dp"--><!--rs:title="测试"--><!--rs:titleSize="18px"--><!--rs:valueSize="26px"--><!--rs:titleColor="@color/colorAccent"--><!--rs:unit="%"--><!--rs:unitColor="@color/colorPrimary"--><!--rs:unitSize="12px"--><!--rs:valueColor="@color/colorPrimary"--><!--rs:valueInCenter="true"--><!--android:elevation="5dp"--><!--rs:rateValue="36" />-->
+
+    <!--android:elevation="5dp">-->
+
+
+    <!--<Button--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:onClick="action"-->
+
+    <!--android:text="add" />-->
